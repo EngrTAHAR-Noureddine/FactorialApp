@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 factEditText.text.toString().toInt() == 0 -> {
                     Toast.makeText(this, "Entres le numero >= 1", Toast.LENGTH_SHORT).show()
                 }
-                factEditText.text.toString().length >=3 -> {
+                factEditText.text.toString().toInt() >20 -> {
                     Toast.makeText(this, "Le nemuro est grand", Toast.LENGTH_SHORT).show()
                 }
                 else -> {
@@ -62,10 +62,10 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                sizeEditText.text.toString().length >=3 -> {
+                sizeEditText.text.toString().length >=7 -> {
                     Toast.makeText(
                         this,
-                        "Le nemuro est grand",
+                        "entrez numero > 1",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

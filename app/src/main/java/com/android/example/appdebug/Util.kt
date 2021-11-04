@@ -1,6 +1,7 @@
 package com.android.example.appdebug
 
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -12,8 +13,17 @@ class Util {
      */
 
     fun openPage(ctx: Context, url: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        ctx.startActivity(intent)
+        var intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+
+        try {
+             intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            ctx.startActivity(intent)
+        }catch (e:ActivityNotFoundException){
+             val newUrl = url.replace("fb://","http:www.facebook.com/")
+             intent = Intent(Intent.ACTION_VIEW, Uri.parse(newUrl))
+            ctx.startActivity(intent)
+        }
+
     }
 
 
