@@ -13,7 +13,7 @@ class Util {
      */
 
     fun openPage(ctx: Context, url: String) {
-        var intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        var intent: Intent
 
         try {
              intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
