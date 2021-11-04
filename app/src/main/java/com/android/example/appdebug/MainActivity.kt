@@ -1,5 +1,8 @@
 package com.android.example.appdebug
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -21,7 +24,13 @@ class MainActivity : AppCompatActivity() {
         val url  = "fb://page/218641444910278"
         // Onclick of the first button
         fbButton.setOnClickListener {
-            util.openPage(this, url)
+
+            try {
+                util.openPage(this, url)
+            }catch (e: ActivityNotFoundException){
+                val newUrl = url.replace("fb://","http:www.facebook.com/")
+                util.openPage(this, newUrl)
+            }
         }
         // Onclick of the second button
 

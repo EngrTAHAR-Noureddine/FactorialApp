@@ -13,17 +13,8 @@ class Util {
      */
 
     fun openPage(ctx: Context, url: String) {
-        var intent: Intent
-
-        try {
-             intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             ctx.startActivity(intent)
-        }catch (e:ActivityNotFoundException){
-             val newUrl = url.replace("fb://","http:www.facebook.com/")
-             intent = Intent(Intent.ACTION_VIEW, Uri.parse(newUrl))
-            ctx.startActivity(intent)
-        }
-
     }
 
 
