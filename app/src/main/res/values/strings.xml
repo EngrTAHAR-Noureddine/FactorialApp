@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App Debug</string>
+    <string name="open_facebook_page">Open Facebook Page</string>
+    <string name="compute_factorial">Compute Factorial</string>
+    <string name="compute_average">COMPUTE AVERAGE</string>
+    <string name="number">Number</string>
+    <string name="list_size">List size</string>
+</resources>
